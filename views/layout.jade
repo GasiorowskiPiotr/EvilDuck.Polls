@@ -1,14 +1,21 @@
 doctype html
 html
   head
-    title= Polls admin
-    link(rel='stylesheet', href='/stylesheets/AdminLTE.min.css')
+    title Polls admin
+    meta(content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/AdminLTE.min.css')
     link(rel='stylesheet', href='/stylesheets/skins/_all-skins.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
-    script(type='text/javascript' src='jquery.min.js')
-    script(type='text/javascript' src='bootstrap.min.js')
-    script(type='text/javascript' src='app.min.js')
-    script(type='text/javascript' src='bundle.js')
+  body.skin-blue.sidebar-mini
+      block content
+
+    script(src='/javascripts/jquery.min.js')
+      'a'
+    script(src='/javascripts/bootstrap.min.js')
+      'z'
+    script(src='/javascripts/app.min.js')
+      'a'
+    script(src='/javascripts/bundle.js')
+      'a'

@@ -6,7 +6,7 @@ var TARGET = process.env.TARGET || 'dev';
 var ROOT_PATH = path.resolve(__dirname);
 
 var common = {
-  entry: [path.resolve(ROOT_PATH, 'client/main.jsx')],
+  entry: [path.resolve(ROOT_PATH, 'client/routes.jsx')],
   output: {
     path: path.resolve(ROOT_PATH, 'public/javascripts'),
     resolve: {
@@ -19,7 +19,7 @@ var common = {
       {
         test: /\.jsx?$/,
         loader: 'babel?stage=1',
-        include: path.resolve(ROOT_PATH, 'app')
+        include: path.resolve(ROOT_PATH, 'client')
       }
     ],
   }
