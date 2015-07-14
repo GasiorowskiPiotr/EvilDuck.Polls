@@ -10,11 +10,11 @@ export default class UserInfo extends React.Component {
     return (
       <li className="dropdown user user-menu">
         <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-          <span className="hidden-xs">{username}</span>
+          <span className="hidden-xs">{this.props.username}</span>
         </a>
         <ul className="dropdown-menu">
           <li className="user-header">
-            <p>{username}</p>
+            <p>{this.props.username}</p>
           </li>
           <li className="user-footer">
             <div className="pull-left">
@@ -30,6 +30,6 @@ export default class UserInfo extends React.Component {
   }
 }
 
-Header.propTypes = {
+UserInfo.propTypes = {
   username: React.PropTypes.string.isRequired,
 };
