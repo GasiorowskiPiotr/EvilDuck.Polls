@@ -7,6 +7,9 @@ export default class UserInfo extends React.Component {
   }
 
   render() {
+
+    let image = this.props.userImage || '/images/user.png';
+
     return (
       <li className="dropdown user user-menu">
         <a href="#" className="dropdown-toggle" data-toggle="dropdown">
@@ -14,6 +17,7 @@ export default class UserInfo extends React.Component {
         </a>
         <ul className="dropdown-menu">
           <li className="user-header">
+            <img src={image} className="img-circle" alt="User Image" />
             <p>{this.props.username}</p>
           </li>
           <li className="user-footer">
@@ -32,4 +36,5 @@ export default class UserInfo extends React.Component {
 
 UserInfo.propTypes = {
   username: React.PropTypes.string.isRequired,
+  userImage: React.PropTypes.string
 };
