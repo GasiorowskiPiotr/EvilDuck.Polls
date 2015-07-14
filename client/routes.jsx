@@ -5,7 +5,7 @@ import Home from './home.jsx';
 
 var routes = (
   <Route path="/" handler={Main}>
-    <DefaultRoute handler={Home} />
+    <DefaultRoute handler={Home} name="Home" />
   </Route>
 );
 
