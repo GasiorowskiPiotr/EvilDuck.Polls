@@ -3,7 +3,8 @@ import Routes from './routes.jsx';
 import Router from 'react-router';
 import AppContext from './appContext.js';
 
+AppContext.SetIsClient(true);
+
 Router.run(Routes, Router.HistoryLocation, (Root) => {
-  AppContext.IsClient(true);
   React.render(<Root/>, document.getElementById('client'));
 });

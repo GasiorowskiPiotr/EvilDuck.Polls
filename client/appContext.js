@@ -4,12 +4,11 @@ class AppContext {
       this._isClient = false;
   }
 
-
-  IsClient() {
+  GetIsClient() {
     return this._isClient;
   }
 
-  IsClient(value) {
+  SetIsClient(value) {
     this._isClient = value;
   }
 

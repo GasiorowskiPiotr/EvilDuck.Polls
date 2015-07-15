@@ -28,6 +28,7 @@ let OAuthUsersSchema = new Schema({
   firstname: { type: String },
   lastname: { type: String },
   email: { type: String, default: '' }
+  claims: { type: [String] }
 });
 
 mongoose.model('OAuthAccessTokens', OAuthAccessTokensSchema);
