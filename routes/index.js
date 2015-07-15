@@ -5,7 +5,7 @@ import Routes from '../client/routes.jsx';
 
 let router = express.Router()
 /* GET home page. */
-router.get('/', (req, res, next) => {
+router.get('*', (req, res, next) => {
   console.log(req.path);
   ReactRouter.run(Routes, req.path, (Root) => {
     var html = React.renderToString(React.createElement(Root));
