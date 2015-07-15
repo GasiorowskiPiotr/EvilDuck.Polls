@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 
 export default class MenuItemGroup extends React.Component {
+
   render() {
 
     var routes = this.props.routeHints.split(',');
@@ -34,19 +35,17 @@ export default class MenuItemGroup extends React.Component {
       </li>
     );
   }
-
-  getDefaultProps() {
-    return {
-      routeHints: "",
-      iconCls: 'fa-circle-o'
-    }
-  }
 }
 
 MenuItemGroup.propTypes = {
   routeHints: React.PropTypes.string,
   iconCls: React.PropTypes.string,
   title: React.PropTypes.string.isRequired
+};
+
+MenuItemGroup.defaultProps = {
+  routeHints: '',
+  iconCls: 'fa-circle-o'
 };
 
 MenuItemGroup.contextTypes = {

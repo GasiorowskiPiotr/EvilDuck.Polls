@@ -6,7 +6,7 @@ var TARGET = process.env.TARGET || 'dev';
 var ROOT_PATH = path.resolve(__dirname);
 
 var common = {
-  entry: [path.resolve(ROOT_PATH, 'client/routes.jsx')],
+  entry: [path.resolve(ROOT_PATH, 'client/client.jsx')],
   output: {
     path: path.resolve(ROOT_PATH, 'public/javascripts'),
     resolve: {
