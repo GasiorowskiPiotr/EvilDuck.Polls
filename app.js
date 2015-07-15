@@ -4,10 +4,17 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-
+import oauthserver from 'oauth2-server';
 import routes from './routes/index';
+import securityModels from './models/Security.js';
 
 let app = express();
+
+app.oauth = oauthserver({
+  model: securityModels,
+  grants: ['password'],
+  debug: false
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +28,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.all('/oauth/token', app.oauth.grant());
 app.use('/', routes);
+app.use('**', routes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -32,6 +41,7 @@ app.use((req, res, next) => {
 
 // error handlers
 
+app.use(app.oauth.errorHandler());
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
