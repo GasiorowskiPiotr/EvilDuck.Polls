@@ -6,6 +6,7 @@ import SideBar from './sidebar.jsx';
 import UserPanel from './user-panel.jsx';
 import MainMenu from './main-menu.jsx';
 import MenuItem from './menu-item.jsx';
+import MenuItemGroup from './menu-item-group.jsx';
 
 export default class Main extends React.Component {
   render() {
@@ -18,6 +19,11 @@ export default class Main extends React.Component {
           <UserPanel username="Piotr Gąsiorowski"></UserPanel>
             <MainMenu title="MENU GŁÓWNE">
               <MenuItem route="Home" title="Strona głowna"></MenuItem>
+              <MenuItemGroup routeHints="First,Second,Third" title="Podmenu">
+                <MenuItem route="First" title="Pierwsza"></MenuItem>
+                <MenuItem route="Second" title="Druga"></MenuItem>
+                <MenuItem route="Third" title="Trzecia"></MenuItem>
+              </MenuItemGroup>
             </MainMenu>
         </SideBar>
 
